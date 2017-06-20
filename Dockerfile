@@ -1,9 +1,10 @@
 FROM airdock/oracle-jdk
 
-# Install Git
+# Install SSH/Git/CA Certs
 RUN apt-get update && \
     apt-get install -y \
     --no-install-recommends \
+    openssh-client \
     git \
     ca-certificates \
     ca-certificates-java \
