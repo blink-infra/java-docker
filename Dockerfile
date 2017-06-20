@@ -1,5 +1,11 @@
 FROM airdock/oracle-jdk
 
+# Install Git
+RUN apt-get update && \
+    apt-get install -y \
+    --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+
 # Download Docker binary
 RUN set -x &&\
     VER="latest" &&\
