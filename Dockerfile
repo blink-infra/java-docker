@@ -6,6 +6,7 @@ RUN apt-get update && \
     --no-install-recommends \
     openssh-client \
     git \
+    jq \
     ca-certificates \
     ca-certificates-java \
     && rm -rf /var/lib/apt/lists/*
