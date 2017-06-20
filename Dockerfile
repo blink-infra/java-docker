@@ -4,6 +4,7 @@ FROM airdock/oracle-jdk
 RUN apt-get update && \
     apt-get install -y \
     --no-install-recommends \
+    awscli \
     openssh-client \
     git \
     jq \
