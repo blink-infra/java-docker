@@ -1,16 +1,19 @@
 FROM airdock/oracle-jdk
 
-# Install SSH/Git/CA Certs
+# Install pip/SSH/Git/CA Certs/jq
 RUN apt-get update && \
     apt-get install -y \
     --no-install-recommends \
-    awscli \
+    python3-pip \
     openssh-client \
     git \
     jq \
     ca-certificates \
     ca-certificates-java \
     && rm -rf /var/lib/apt/lists/*
+
+# Install AWS CLI
+RUN pip3 install awscli
 
 # Download Docker binary
 RUN set -x &&\
